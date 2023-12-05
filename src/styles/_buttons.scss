@@ -1,0 +1,43 @@
+.ui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ui-border-radius);
+  background-color: inherit;
+  cursor: pointer;
+  color: #fff;
+  transition: all var(--ui-transition-time) var(--ui-transition-function);
+  transition-property: background-color, border-color, color;
+  -webkit-appearance: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 13px 20px;
+  margin: 0;
+  font-size: 16px;
+  font-family: var(--ui-font-family-body);
+
+  &--primary {
+    background-color: var(--ui-color-orange);
+    border: 1px solid var(--ui-color-orange);
+    display: inline-block;
+
+    &:hover {
+      border: 1px solid var(--ui-color-orange);
+      background: var(--ui-color-orange-text);
+      text-decoration: none;
+    }
+  }
+
+  &--secondary {
+    background-color: var(--ui-color-turquoise);
+    border: 1px solid var(--ui-color-turquoise);
+    display: inline-block;
+
+    &:hover {
+      border: 1px solid var(--ui-color-turquoise);
+      background: var(--ui-color-teal);
+      text-decoration: none;
+    }
+  }
+}

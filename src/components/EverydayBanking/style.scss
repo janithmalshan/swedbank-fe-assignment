@@ -1,0 +1,15 @@
+.everyday-banking {
+
+  &__tab-container {
+    .ui-button-container {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 10px;
+    }
+
+    [name="currency"] {
+      width: 90px;
+    }
+  }
+}

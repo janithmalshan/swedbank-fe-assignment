@@ -18,7 +18,6 @@ export const Tabs = function({ children, tabs, defaultTab, onTabSelect, classNam
                         onClick={() => setCurrentTab(tabValue)}
                         className={`${currentTab === tabValue ? 'active' : ''}`}
                         key={tabValue}
-                        //onClick={() => onTabSelect(tabValue)}
                     > {tabValue} </li>
                 ))}
             </ul>

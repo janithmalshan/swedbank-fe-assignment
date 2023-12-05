@@ -7,14 +7,12 @@ const Form = ({ action, children, className, onSubmit, ...props }) => {
 
         formElement.classList.add('style.submitted');
 
-        // focusing the first invalid field
         const firstInvalidField = formElement.querySelector(
             ":invalid"
         );
 
         firstInvalidField?.focus();
 
-        // submit the dataObject if isValid===true
         if (isValid) {
             const dataObject = new FormData(formElement);
             onSubmit(dataObject);
@@ -26,10 +24,9 @@ const Form = ({ action, children, className, onSubmit, ...props }) => {
             action={action}
             onSubmit={handleSubmit}
             noValidate
-            className={'form'}
             {...props}
         >
-            <div className={'wrapper'}>{children}</div>
+            <div className={'ui-form'}>{children}</div>
         </form>
     );
 };
