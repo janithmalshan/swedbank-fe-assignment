@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+
 .everyday-banking {
 
   &__tab-container {
@@ -70,6 +71,50 @@
       .ui-button {
         width: 100%;
       }
+    }
+  }
+}
+
+.calculator-container {
+  > hr {
+    margin: 0 10px;
+    opacity: 0.25;
+  }
+
+  &__form {
+    flex-grow: 0.7;
+
+    .ui-form-input-container {
+      width: auto;
+    }
+  }
+
+  &__result {
+    flex-grow: 0.3;
+    text-align: end;
+
+    > hr {
+      margin: 10px 0;
+      opacity: 0.25;
+    }
+
+    p {
+      margin: 0 0 0 10px;
+      align-self: flex-end;
+    }
+
+    &-payment {
+      color: var(--ui-color-orange-text);
+      font-size: 26px;
+
+      small {
+        color: var(--ui-color-bark);
+        font-size: 15px;
+      }
+    }
+
+    .ui-button {
+      margin-top: 10px;
     }
   }
 }
