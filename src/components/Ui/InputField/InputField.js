@@ -21,13 +21,13 @@ const InputField = ({label, name, value, hint, isError, errorText, isNumber, chi
             console.log('00001', e.target.value)
             console.log(target.validationMessage)
             // setValidationMessage(target.validationMessage)
-            target.setCustomValidity("Invalid field.");
+            target.setCustomValidity("Accepts only numbers");
         }
     };
     return (
         <div className={isError ? 'ui-form-control error' : 'ui-form-control'}>
+            {!!label && <label htmlFor={name} className="ui-form-control__label">{label}</label>}
             <div className="ui-form-control__content">
-                {!!label && <label htmlFor={name} className="ui-form-control__label">{label}</label>}
                 <div className="ui-form-input-container">
                     <input
                         name={name}
@@ -37,10 +37,10 @@ const InputField = ({label, name, value, hint, isError, errorText, isNumber, chi
                         data-number={isNumber}
                         className="ui-form-input"
                         {...props}/>
-                    {children}
+                    {!!validationMessage && <small className="error-text">{errorText || validationMessage}</small>}
                 </div>
+                {children}
             </div>
-            {!!validationMessage && <small>{errorText || validationMessage}</small>}
         </div>
     )
 }

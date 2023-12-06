@@ -7,17 +7,19 @@ const SelectField = ({options, label, name, isError, ...props}) => {
     }
     return (
         <div className={isError ? 'ui-form-control error' : 'ui-form-control'}>
+            {!!label && <label htmlFor={name} className="ui-form-control__label">{label}</label>}
             <div className="ui-form-control__content">
-                {!!label && <label htmlFor={name} className="ui-form-control__label">{label}</label>}
-                <select name={name} value={option} {...props} onChange={handleOnChange} className="ui-form-select">
-                    {
-                        options.map(option => (
-                            <option key={option.value} value={option.value}>{option.label}</option>
-                        ))
-                    }
-                </select>
+                <div className="ui-form-input-container">
+                    <select name={name} value={option} {...props} onChange={handleOnChange} className="ui-form-select">
+                        {
+                            options.map(option => (
+                                <option key={option.value} value={option.value}>{option.label}</option>
+                            ))
+                        }
+                    </select>
+                    {!options?.length && <small className="error-text">Something went wrong!</small>}
+                </div>
             </div>
-            {!options?.length && <small>Something went wrong!</small>}
         </div>
     )
 }
