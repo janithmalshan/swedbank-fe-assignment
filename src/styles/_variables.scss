@@ -25,12 +25,14 @@
     Add here layout (box-model) related common properties: like borders,
     shadows, margins, padding, etc.
   */
-  --ui-brandingbar-height: 3px;
+  //--ui-brandingbar-height: 3px;
+  --ui-brandingbar-height: 6px;
   --ui-header-toolbar-height: 50px;
   --ui-header-height: 60px;
   --ui-nav-top: calc(var(--ui-header-height) + var(--ui-brandingbar-height));
   --ui-modal-overlay: rgba(var(--ui-color-bark-rgb), 0.6);
   --ui-border-radius: 3px;
+  --ui-form-input-size: 46px;
 
 /* =================== Form Elements ================== */
 /* =================== Legacy (to remove) ================== */
@@ -73,6 +75,7 @@
   --ui-color-bark: #512b2b;
   --ui-color-bark-rgb: 81, 43, 43;
   --ui-color-blue: #5b8ad6;
+  --ui-color-alert-red: #c5131c;
 
   /* Brown-scale colours */
   --ui-color-mediumbrown: #72605e;
@@ -88,17 +91,13 @@
   --ui-color-lightgrey: #f9f8f6;
 }
 
-/* header */
+$sm-width: '767px';
+//$md-width: '960px';
+//$lg-width: '1280px';
+//$xl-width: '1920px';
 
-html:not(.redesign) .-content-section > h2 {
-  display: block;
-  padding: 10px 0;
-  margin: 0;
-  border-bottom: 1px solid var(--ui-color-grey);
-}
-
-.redesign .page-header__wrapper > .logo {
-  margin: 0;
-  width: auto;
-  height: 40px;
+@mixin media-xs() {
+  @media screen and (max-width: $sm-width) {
+    @content();
+  }
 }

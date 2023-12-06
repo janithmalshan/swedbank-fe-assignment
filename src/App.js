@@ -1,4 +1,5 @@
 import EverydayBanking from "./components/EverydayBanking/EverydayBanking";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
                     <EverydayBanking/>
                 </div>
             </main>
+            <Footer />
         </div>
     );
 }
