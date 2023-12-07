@@ -2,7 +2,7 @@
 /* =================== fonts ================== */
   --ui-font-family-body: 'Roboto', sans-serif;
   //--ui-font-family-body: RobotoRegular, Helvetica, Arial, sans-serif;
-  --ui-font-size-body: 15px;
+  --ui-font-size-body: 14px;
   --ui-line-height-body: 22px;
   --ui-font-body: normal var(--ui-font-size-body)/var(--ui-line-height-body) var(--ui-font-family-body);
 
@@ -26,19 +26,21 @@
     shadows, margins, padding, etc.
   */
   //--ui-brandingbar-height: 3px;
-  --ui-brandingbar-height: 6px;
-  --ui-header-toolbar-height: 50px;
-  --ui-header-height: 60px;
+  --ui-brandingbar-height: 8px;
+  --ui-header-toolbar-height: 40px;
+  --ui-header-height: 46px;
   --ui-nav-top: calc(var(--ui-header-height) + var(--ui-brandingbar-height));
   --ui-modal-overlay: rgba(var(--ui-color-bark-rgb), 0.6);
   --ui-border-radius: 3px;
-  --ui-form-input-size: 46px;
+  --ui-form-input-size: 38px;
+  --ui-form-input-maxw: 380px;
 
 /* =================== Form Elements ================== */
 /* =================== Legacy (to remove) ================== */
   --ui-color-input-border: #bcd8db;
   --ui-color-input-subborder: #c4e6e1;
   --ui-color-input: #f1faf6;
+  --ui-color-input-range: #eaded7;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -81,14 +83,14 @@
   --ui-color-mediumbrown: #72605e;
   --ui-color-softbrown: #896f6f;
   --ui-color-lighterbark: #dec9c9;
-  --ui-color-extrasoft-bark: #e5dcd7;
+  --ui-color-extrasoft-bark: #ebe7e2;
   --ui-color-lightbrown: #d4c4bc;
   --ui-color-darkvanilla: #d4b8a3;
 
   /* Greyscale colours */
   --ui-color-grey: #ebe7e2;
   --ui-color-listgrey: #999;
-  --ui-color-lightgrey: #f9f8f6;
+  --ui-color-lightgrey: #f7f5f3;
 }
 
 $sm-width: '767px';

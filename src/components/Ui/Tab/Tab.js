@@ -39,30 +39,3 @@ export const Tabs = function({ children, tabs, defaultTab, onTabSelect, classNam
 export const Tab = function({ children, ...props }) {
     return <section {...props}>{children}</section>
 }
-// const Tab = ({tabs}) => {
-//     // const tabs = ['Tab 1', 'Tab 2', 'Tab 3'];
-//     const [activeTab, setActiveTab] = useState()
-//     const handleTabClick = (tab) => {
-//         setActiveTab(tab);
-//     };
-//     return (
-//         <div>
-//             <ul className="tab-list">
-//                 {tabs.map((tab, index) => (
-//                     <li
-//                         key={index}
-//                         className={`tab-item ${activeTab === tab ? 'active' : ''}`}
-//                         onClick={() => handleTabClick(tab)}
-//                     >
-//                         {tab}
-//                     </li>
-//                 ))}
-//             </ul>
-//             <div className="tab-content">
-//                 <p>{`This is the content for ${activeTab}.`}</p>
-//             </div>
-//         </div>
-//     )
-// }
-//
-// export default Tab

@@ -1,0 +1,65 @@
+@import "../../styles/variables";
+
+.header {
+  background-color: #ffffff;
+
+  &::before {
+    content: "";
+    display: block;
+    width: auto;
+    height: var(--ui-brandingbar-height);
+    background: var(--ui-color-orange);
+    background: linear-gradient(90deg, var(--ui-color-orange) 0%, var(--ui-color-tangerine) 50%, var(--ui-color-pineapple) 100%);
+  }
+
+  &__toolbar-wrapper {
+    height: var(--ui-header-toolbar-height);
+    display: flex;
+    align-items: center;
+
+    .ui-logo {
+      height: 26px;
+      margin-left: 20px;
+
+      > img {
+        height: inherit;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    height: var(--ui-header-height);
+    border-top: 1px solid var(--ui-color-grey);
+
+    &-nav {
+      display: flex;
+      min-height: var(--ui-header-height);
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      color: var(--ui-color-bark);
+      line-height: 1;
+      justify-content: center;
+
+      &:not(last-of-type) {
+        border-right: 1px solid var(--ui-color-grey);
+      }
+
+      > img {
+        color: inherit;
+        height: 17px;
+        margin-bottom: 2px;
+      }
+
+      &.selected {
+        color: var(--ui-color-orange-text);
+
+        > img {
+          filter: invert(29%) sepia(95%) saturate(2328%) hue-rotate(6deg) brightness(107%) contrast(102%);
+        }
+      }
+    }
+  }
+}

@@ -14,7 +14,7 @@ const Footer = () => {
                         <h3>Contact</h3>
                         <h1>6 310 310</h1>
                         <a href="mailto:info@swedbank.ee" className="ui-link">info@swedbank.ee</a>
-                        <p>
+                        <p className="footer-address">
                             SWEDBANK AS <br/>
                             Liivalaila 8, 15040 Tallinn <br/>
                             SWIFT kood/BIC: SWDW9E2X<br/>

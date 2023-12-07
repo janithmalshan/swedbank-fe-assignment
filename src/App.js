@@ -1,15 +1,12 @@
 import EverydayBanking from "./components/EverydayBanking/EverydayBanking";
 import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 
 function App() {
 
     return (
         <div className="App">
-            <header className="App-header">
-                <p>
-                    Home
-                </p>
-            </header>
+            <Header />
             <main className="page-content">
                 <div className="page-content__wrapper">
                     <EverydayBanking/>

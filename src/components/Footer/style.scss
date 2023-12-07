@@ -1,16 +1,24 @@
 @import "../../styles/variables";
 .footer {
   margin: 20px 0 0 0;
+  background-color: var(--ui-color-extrasoft-bark);
 
   &__main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
+    font-size: 12px;
 
     &__col {
       margin-bottom: 10px;
 
+      h1 {
+        margin: 0 0 10px 0;
+      }
+
       h3 {
+        font-weight: normal;
+        margin: 4px 0;
       }
 
       ul {
@@ -18,7 +26,7 @@
         padding: 0;
 
         li {
-          margin: 5px 0;
+          margin: 2px 0;
           padding: 0;
           list-style: none;
 
@@ -32,16 +40,19 @@
 
           &.social-item-link {
             display: inline-block;
-            margin-right: 10px;
+            margin-right: 8px;
 
             img {
-              width: 20px;
+              width: 16px;
             }
           }
         }
       }
 
       &:first-of-type {
+        .footer-address {
+          line-height: 1.1;
+        }
         .ui-link {
           text-decoration: underline;
 
@@ -54,22 +65,24 @@
 
     @include media-xs {
       grid-template-columns: 1fr;
+      padding: 0 15px;
     }
   }
 
   &__bottom {
     background-color: #FFFFFF;
-    padding: 20px 0;
+    padding: 20px 15px 40px;
 
     .disclaimer {
       width: 90%;
+      max-width: 800px;
       text-align: center;
-      max-width: initial;
       box-sizing: border-box;
       margin: 0 auto;
+      background-color: #ffffff;
       color: var(--ui-color-softbrown);
-      line-height: 16px;
-      font-size: 13px;
+      line-height: 1.5;
+      font-size: 10px;
     }
   }
 
@@ -77,7 +90,7 @@
     content: "";
     display: block;
     width: auto;
-    height: var(--ui-brandingbar-height);
+    height: calc(var(--ui-brandingbar-height)/2);
     background: var(--ui-color-orange);
     background: linear-gradient(90deg, var(--ui-color-orange) 0%, var(--ui-color-tangerine) 50%, var(--ui-color-pineapple) 100%);
   }

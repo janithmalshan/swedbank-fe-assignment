@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const InputField = ({label, name, value, hint, isError, errorText, isNumber, children, ...props}) => {
+const InputField = ({label, name, value, hint, errorText, isNumber, children, ...props}) => {
     const [validationMessage, setValidationMessage] = useState();
     // const [required, setRequired] = useState()
     // const [onlyNumber, setOnlyNumber] = useState()
@@ -25,7 +25,7 @@ const InputField = ({label, name, value, hint, isError, errorText, isNumber, chi
         }
     };
     return (
-        <div className={isError ? 'ui-form-control error' : 'ui-form-control'}>
+        <div className={!!validationMessage ? 'ui-form-control error' : 'ui-form-control'}>
             {!!label && <label htmlFor={name} className="ui-form-control__label">{label}</label>}
             <div className="ui-form-control__content">
                 <div className="ui-form-input-container">

@@ -12,11 +12,9 @@
   text-decoration: none;
   box-sizing: border-box;
   text-align: center;
-  padding: 10px 20px;
-  min-height: 44px;
+  padding: 5px 15px;
+  min-height: 32px;
   margin: 0;
-  font-size: 17px;
-  font-family: var(--ui-font-family-body);
 
   &--primary {
     background-color: var(--ui-color-orange);

@@ -13,10 +13,10 @@
     display: inline-block;
     width: 0;
     height: 0;
-    border-top: 6px solid transparent;
-    border-bottom: 6px solid transparent;
-    border-left: 7px solid var(--ui-color-teal);
-    margin-right: 7px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 5px solid var(--ui-color-teal);
+    margin-right: 5px;
   }
 }
 
@@ -49,13 +49,21 @@
 .ui-section {
   background-color: #fff;
   border-radius: var(--ui-border-radius);
-  padding: 20px;
+  padding: 15px;
   margin: 10px 0 0;
   display: flex;
   flex: 1;
   flex-direction: column;
+
+  @include media-xs {
+    padding: 10px;
+  }
 }
 
 h1 {
-  color: var(--ui-color-orange-text);
+  color: var(--ui-color-orange);
+}
+
+.ui-title {
+  margin: 10px 15px;
 }
