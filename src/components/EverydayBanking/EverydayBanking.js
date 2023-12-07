@@ -14,7 +14,6 @@ const EverydayBanking = () => {
     const {setCurrentTab} = useTabs();
     return (
         <>
-            <h1 className="ui-title">Everyday banking</h1>
             <Tabs defaultTab={tabs.payment} tabs={tabs} onTabSelect={(tab) => setCurrentTab(tab)} className="everyday-banking__tab-container">
                 <Tab id={tabs.payment}>
                     <PaymentTab/>

@@ -42,6 +42,14 @@
       color: var(--ui-color-bark);
       line-height: 1;
       justify-content: center;
+      text-decoration: none;
+      transition: all var(--ui-transition-time) var(--ui-transition-function);
+      transition-property: background-color, border-color, color;
+      -webkit-appearance: none;
+
+      &:hover {
+        background-color: var(--ui-color-extrasoft-bark);
+      }
 
       &:not(last-of-type) {
         border-right: 1px solid var(--ui-color-grey);
@@ -53,7 +61,7 @@
         margin-bottom: 2px;
       }
 
-      &.selected {
+      &.active {
         color: var(--ui-color-orange-text);
 
         > img {

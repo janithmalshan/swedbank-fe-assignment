@@ -1,18 +1,19 @@
-import EverydayBanking from "./components/EverydayBanking/EverydayBanking";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
+import EverydayBankingPage from "./pages/EverydayBankingPage";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import HomePage from "./pages/HomePage";
 
 function App() {
 
     return (
         <div className="App">
-            <Header />
-            <main className="page-content">
-                <div className="page-content__wrapper">
-                    <EverydayBanking/>
-                </div>
-            </main>
-            <Footer />
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<HomePage />} />
+                    <Route path="everyday-banking" element={<EverydayBankingPage />} />
+                    <Route path="*" element={<HomePage />} />
+                </Route>
+            </Routes>
         </div>
     );
 }
