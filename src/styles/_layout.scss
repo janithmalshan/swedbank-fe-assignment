@@ -12,3 +12,17 @@
   flex-direction: column;
   align-items: stretch;
 }
+
+.page-overlay {
+  position: fixed;
+  background-color: var(--ui-color-bark);
+  opacity: 0.4;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  transition: all var(--ui-transition-time) var(--ui-transition-function);
+  transition-property: background-color;
+}
+

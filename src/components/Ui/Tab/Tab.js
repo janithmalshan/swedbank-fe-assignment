@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import {useTabs} from "./TabContext";
-import './tab.scss';
 
 export const Tabs = function({ children, tabs, defaultTab, onTabSelect, className, ...props }) {
     const { currentTab, setCurrentTab } = useTabs();
