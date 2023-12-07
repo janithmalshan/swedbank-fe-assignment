@@ -2,6 +2,7 @@ import Button from "../Ui/Button/Button";
 import SelectField from "../Ui/SelectField/SelectField";
 import Form from "../Ui/Form/Form";
 import {useEffect, useState} from "react";
+import SelectRange from "../Ui/SelectRange/SelectRange";
 
 const optionsYear = [
     {value: '30', label: '30 years'},
@@ -17,15 +18,24 @@ const optionsInt = [
     {value: '4', label: '4.0 %'},
     {value: '3.5', label: '3.5 %'}
 ]
+const loanSizeMin = '32000'
+const loanSizeMax = '320000'
 
 const CalculatorTab = () => {
     const [loanSize, setLoanSize] = useState('0')
-    const [period, setPeriod] = useState(optionsYear[0].value)
-    const [interest, setInterest] = useState(optionsInt[0].value)
+    const [period, setPeriod] = useState('0')
+    const [interest, setInterest] = useState('0')
     const [payment, setPayment] = useState(0)
     const handleSubmit = (data) => {
         console.log(Object.fromEntries(data.entries()));
-    };
+    }
+
+    useEffect(() => {
+            !!loanSizeMax ? setLoanSize(loanSizeMin) : setLoanSize('0')
+            !!optionsYear.length ? setPeriod(optionsYear[0].value) : setPeriod('0');
+            !!optionsInt.length ? setInterest(optionsInt[0].value) : setInterest('0');
+        }, []
+    )
 
     const calculateMonthlyPayment = () => {
         console.log(loanSize, period, interest)
@@ -54,10 +64,12 @@ const CalculatorTab = () => {
         <Form onSubmit={handleSubmit}>
             <div className="ui-flex-row calculator-container">
                 <div className="ui-form calculator-container__form">
-                    <div>
-                        <input type="range" id="volume" name="volume" min="10000" max="200000" onChange={(e) => setLoanSize(e.target.value)}/>
-                        <label htmlFor="volume">{loanSize}</label>
-                    </div>
+                    <SelectRange
+                        name="loan-size"
+                        label="Loan size"
+                        min={loanSizeMin}
+                        max={loanSizeMax}
+                        onChange={(e) => setLoanSize(e.target.value)}/>
                     <SelectField required options={optionsYear} label="Period" name="num-of-years" onClick={(e) => setPeriod(e.target.value)}/>
                     <SelectField required options={optionsInt} label="Interest" name="interest" onClick={(e) => setInterest(e.target.value)}/>
                 </div>
