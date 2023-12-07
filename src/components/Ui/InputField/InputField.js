@@ -2,6 +2,7 @@ import {useState} from "react";
 
 const InputField = ({label, name, value, hint, errorText, isNumber, children, ...props}) => {
     const [validationMessage, setValidationMessage] = useState();
+    let isError = !!validationMessage
     // const [required, setRequired] = useState()
     // const [onlyNumber, setOnlyNumber] = useState()
 
@@ -14,7 +15,7 @@ const InputField = ({label, name, value, hint, errorText, isNumber, children, ..
         const target = e.target;
         console.log('0000', e.target.dataset.number, !!e.target.value)
 
-        if (!!validationMessage) {
+        if (isError) {
             setValidationMessage(target.validationMessage);
         }
         if (e.target.dataset.number && isNaN(e.target.value) && !!e.target.value) {
@@ -25,7 +26,7 @@ const InputField = ({label, name, value, hint, errorText, isNumber, children, ..
         }
     };
     return (
-        <div className={!!validationMessage ? 'ui-form-control error' : 'ui-form-control'}>
+        <div className={isError ? 'ui-form-control error' : 'ui-form-control'}>
             {!!label && <label htmlFor={name} className="ui-form-control__label">{label}</label>}
             <div className="ui-form-control__content">
                 <div className="ui-form-input-container">
@@ -37,7 +38,7 @@ const InputField = ({label, name, value, hint, errorText, isNumber, children, ..
                         data-number={isNumber}
                         className="ui-form-input"
                         {...props}/>
-                    {!!validationMessage && <small className="error-text">{errorText || validationMessage}</small>}
+                    {isError && <small className="error-text">{errorText || validationMessage}</small>}
                 </div>
                 {children}
             </div>

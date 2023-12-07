@@ -1,3 +1,4 @@
+import '../../../styles/style.scss'
 const Button = ({label, variant, ...props}) => {
     return (
         <button
