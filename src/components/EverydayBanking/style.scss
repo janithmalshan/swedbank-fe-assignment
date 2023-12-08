@@ -145,6 +145,10 @@
 
     @include media-xs {
       width: 100%;
+      > div {
+        flex-direction: row;
+        padding-top: 10px;
+      }
     }
   }
 }
