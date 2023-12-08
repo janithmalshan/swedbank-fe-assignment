@@ -38,9 +38,6 @@ const CalculatorTab = () => {
     )
 
     const calculateMonthlyPayment = () => {
-        console.log(loanSize, period, interest)
-        //todo: check function and make slider component
-
         // to the number of monthly payments.
         const principal = parseFloat(loanSize);
         const interestAnnual = parseFloat(interest) / 100 / 12;

@@ -19,7 +19,6 @@ const optionsCurrency = [
 
 const PaymentTab = () => {
     const handleSubmit = (data) => {
-        console.log(data)
         console.log(Object.fromEntries(data.entries()));
     };
     return (

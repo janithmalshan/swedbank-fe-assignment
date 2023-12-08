@@ -3,8 +3,6 @@ import {useState} from "react";
 const InputField = ({label, name, value, hint, errorText, isNumber, children, ...props}) => {
     const [validationMessage, setValidationMessage] = useState();
     let isError = !!validationMessage
-    // const [required, setRequired] = useState()
-    // const [onlyNumber, setOnlyNumber] = useState()
 
     const onInvalid = (e) => {
         const target = e.target;
@@ -13,15 +11,11 @@ const InputField = ({label, name, value, hint, errorText, isNumber, children, ..
 
     const onBlur = (e) => {
         const target = e.target;
-        console.log('0000', e.target.dataset.number, !!e.target.value)
 
         if (isError) {
             setValidationMessage(target.validationMessage);
         }
         if (e.target.dataset.number && isNaN(e.target.value) && !!e.target.value) {
-            console.log('00001', e.target.value)
-            console.log(target.validationMessage)
-            // setValidationMessage(target.validationMessage)
             target.setCustomValidity("Accepts only numbers");
         }
     };
@@ -37,6 +31,7 @@ const InputField = ({label, name, value, hint, errorText, isNumber, children, ..
                         onBlur={onBlur}
                         data-number={isNumber}
                         className="ui-form-input"
+                        type={isNumber ? 'number' : 'text'}
                         {...props}/>
                     {isError && <small className="error-text">{errorText || validationMessage}</small>}
                 </div>

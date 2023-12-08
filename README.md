@@ -1,8 +1,18 @@
 #  Frontend dev homework
 
+- No libraries or frameworks used for styling or form validation
+- Node version v18.17.1 +
+- Storybook integration done partially. [Input elements and Button elements can be seen]
+- Menu and UI mockups implemented as the task description. Colors and sizes may differ slightly.
 
 
 ## Available Scripts
+
+
+In the project directory, start with installing dependencies:
+
+### `npm install`
+
 
 In the project directory, you can run:
 

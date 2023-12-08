@@ -56,6 +56,16 @@
     width: 100%;
     max-width: var(--ui-form-input-maxw);
 
+    &[type='number']::-webkit-outer-spin-button,
+    &[type='number']::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &[type=number] {
+      -moz-appearance: textfield;
+    }
+
     &-container {
       display: flex;
       flex-direction: column;
