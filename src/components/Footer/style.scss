@@ -64,7 +64,7 @@
     }
 
     @include media-xs {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       padding: 0 15px;
     }
   }
