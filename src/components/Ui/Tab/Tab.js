@@ -24,9 +24,10 @@ export const Tabs = function({ children, tabs, defaultTab, onTabSelect, classNam
                 {
                     children &&
                     React.Children.map(children, (child) => {
-                        if(child.type.name !== 'Tab') {
-                            throw new Error('The child components should be of type Tab')
-                        }
+                        // console.log(child.type.name)
+                        // if(child.type.name !== 'Tab') {
+                        //     throw new Error('The child components should be of type Tab')
+                        // }
                         return child.props.id === currentTab ? child : null;
                     })
                 }
